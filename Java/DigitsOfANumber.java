@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.lang.Math;
 
-class CifreNumar {
+class DigitsOfANumber {
 	// n = 12345 -> arr = [5, 4, 3, 2, 1]
 	public static ArrayList<Integer> getDigitsReverse(int n) {
 		ArrayList<Integer> digRevArr = new ArrayList<Integer>();
@@ -57,8 +57,8 @@ class CifreNumar {
 	public static void main(String[] args) {
 		int n = 12345;
 
-		ArrayList<Integer> arr = CifreNumar.getDigitsReverse(n);
-		int mirr = CifreNumar.getMirrorNr(n);
+		ArrayList<Integer> arr = DigitsOfANumber.getDigitsReverse(n);
+		int mirr = DigitsOfANumber.getMirrorNr(n);
 		
 		System.out.println("getDigitsReverse(" + n + ") = " + arr.toString());
 		System.out.println(mirr);

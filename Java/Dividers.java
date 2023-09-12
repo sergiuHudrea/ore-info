@@ -88,6 +88,26 @@ class Dividers {
 	}
 
 
+	public static void printPrimeDividers(int n) {
+		int divider = 2;
+		int power;
+
+		while (n > 1) {
+			power = 0;
+			while ((n % divider) == 0) {
+				power++;
+				n /= divider;
+			}
+			
+			System.out.print(divider);
+			System.out.print(" * ");
+			System.out.println(power);
+
+			divider++;
+		}
+	}
+
+
 	public static void main(String[] args) {
 		// int nB = 36;
 		// int nR = 85;
@@ -112,9 +132,12 @@ class Dividers {
 
 		// System.out.println(Dividers.cmmmcArr(arr));
 
-		int n1 = 8;
+		// int n1 = 8;
+		// System.out.println(Dividers.isPrime(n1));
 
-		System.out.println(Dividers.isPrime(n1));
+
+		int n = 24;
+		printPrimeDividers(n);
 
 	}
 }
