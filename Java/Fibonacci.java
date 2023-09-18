@@ -105,7 +105,15 @@ class Fibonacci {
 
     // 5. https://www.pbinfo.ro/probleme/3176/fibo0
     public static int fiboZero(int[] arr) {
+        int contor = 0;
         
+        for (int i = 0; i < arr.length - 1; i += 2) {
+            if (((float)arr[i + 1] / arr[i]) % 1 == 0) {
+                contor++;
+            }
+        }
+        
+        return contor;
     }
 
 
@@ -127,5 +135,8 @@ class Fibonacci {
         // int n = 30;
         // fiboSum(n);
 
+        // 5.
+        int[] arr2 = {4, 9, 4, 8, 10, 12, 7, 21};
+        System.out.println(fiboZero(arr2));
     }
 }

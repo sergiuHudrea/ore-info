@@ -5,15 +5,30 @@ import java.lang.Math;
 class HomeworkDigitsOfANumber {
     
     // 1. https://www.pbinfo.ro/probleme/4018/moscraciun3
-    // public static int mosCraciun3(int nr, int b, int e) {
-    //     int nrCifre = nrCifre(nr);
-
+    public static int mosCraciun3(int nr, int b, int e) {
+        int nrCifre = nrCifre(nr);
+        int left = 0;
+        int right = 0;
+        int mid = 0;
+        int lengthMid = 0;
+        int newNr;
         
-    //     while (n >)
+        for (int i = 0; i < b; i++) {
+            left += ((nr / (int)Math.pow(10, (nrCifre - b + i))) % 10) * Math.pow(10, (b - i - 1));
+        }
+        left *= Math.pow(10, (nrCifre - b));
+        
+        for (int i = 0; i < e; i++) {
+            right += ((nr / (int)Math.pow(10, i)) % 10) * (int)Math.pow(10, (e - i - 1));
+        }
+        
+        lengthMid = nrCifre - (b + e);
+        mid = (nr / (int)Math.pow(10, e)) % (int)Math.pow(10, lengthMid) * (int)Math.pow(10, e);
+        
+        newNr = left + mid + right;
 
-
-    //     return cod;
-    // }
+        return newNr;
+    }
 
     // 2. https://www.pbinfo.ro/probleme/3251/asociat-par
     // I WANT TO USE IT FROM THE OTHER CLASS
@@ -28,26 +43,26 @@ class HomeworkDigitsOfANumber {
         return nrCifre;
     }
 
-    // public static boolean isPalindrome(int n) {
-	//     int nrCifre = nrCifre(n);
+    public static boolean isPalindrome(int n) {
+	    int nrCifre = nrCifre(n);
 	    
-	//     int bModulo = 10;
-    //     int bDivider = 1;
+	    int bModulo = 10;
+        int bDivider = 1;
 
-    //     int fPower = nrCifre - 1;
+        int fPower = nrCifre - 1;
 
-    //     for (int i = 0; i < nrCifre / 2; i++) {
-    //         int backDigit = (n % bModulo) / bDivider;
-    //         int frontDigit = (n / (int)Math.pow(10, fPower)) % 10;
+        for (int i = 0; i < nrCifre / 2; i++) {
+            int backDigit = (n % bModulo) / bDivider;
+            int frontDigit = (n / (int)Math.pow(10, fPower)) % 10;
 
-    //         if (backDigit != frontDigit) {
-    //             return false;
-    //         }
-    //     }
+            if (backDigit != frontDigit) {
+                return false;
+            }
+        }
 	    
-    //     return true;
+        return true;
 	    
-	// }
+	}
 
     public static int asociatPar(int[] arr) {
         int nrPal = 0;
@@ -63,7 +78,7 @@ class HomeworkDigitsOfANumber {
                 }
                 arr[i] /= 10;
             }
-            if (asociatPar > 0 & DigitsOfANumber.isPalindrome(asociatPar)) {
+            if (asociatPar > 0 & isPalindrome(asociatPar)) {
                 nrPal++;
             }
         }
@@ -170,10 +185,14 @@ class HomeworkDigitsOfANumber {
     
     public static void main(String[] args) {
         
+        // 1.
+        int cod = mosCraciun3(1428429, 2, 3);
+        System.out.println(cod);
+        
         // 2.
-        int[] arr2 = {45456, 474, 201102, 2352345, 234};
-        int nrPal = asociatPar(arr2);
-        System.out.println(nrPal);
+        // int[] arr2 = {45456, 474, 201102, 2352345, 234};
+        // int nrPal = asociatPar(arr2);
+        // System.out.println(nrPal);
 
         // 3.
         // int[] arr3 = {12, 213, 214, 412, 212};
