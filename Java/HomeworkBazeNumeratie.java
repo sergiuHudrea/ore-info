@@ -3,7 +3,7 @@ import java.util.AbstractMap;
 import java.util.Map;
 import java.util.ArrayList;
 
-class BazeNumeratie {
+class HomeworkBazeNumeratie {
 
     // 1. https://www.pbinfo.ro/probleme/429/cifbin
      public static int baseTenToBaseTwo(int nr) {
