@@ -81,7 +81,7 @@ public class Siruri {
 
         for (int i = 1; i < arr.length; i++) {
             index = i;
-            while (arr[index] < arr[index - 1] && index > 0) {
+            while (index > 0 && arr[index] < arr[index - 1]) {
                 aux = arr[index];
                 arr[index] = arr[index - 1];
                 arr[index - 1] = aux;
