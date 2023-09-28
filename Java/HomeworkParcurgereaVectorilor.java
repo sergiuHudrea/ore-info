@@ -81,7 +81,7 @@ class HomeworkParcurgereaVectorilor {
 			}
 		}
 
-		if (n % (int)Math.sqrt(n) == 0) {
+		if ((int)Math.sqrt(n) != 0 && n % (int)Math.sqrt(n) == 0) {
 			counter++;
 		}
 		
