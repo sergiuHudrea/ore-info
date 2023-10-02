@@ -1,16 +1,27 @@
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 class HomeworkStergeriSiInserari {
 
     // 1. https://www.pbinfo.ro/probleme/159/inseraredupa
+    public static void inserare(ArrayList<Integer> arr, int index, int nr) {
+        arr.add(0);
+        for (int i = arr.size() - 1; i > index; i--) {
+            arr.set(i, arr.get(i - 1));
+        }
+        arr.set(index, nr);
+    }
+
+    
     public static void inserareDupa(ArrayList<Integer> arr) {
         int doub = 0;
         for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr);
             if (arr.get(i) % 2 == 0) {
                 doub = arr.get(i) * 2;
-                arr.add(i + 1, doub);
-                i++;
+                // arr.add(i + 1, doub);
+                inserare(arr, i + 1, doub);
+                i+= 1;
             }
         }
     }
@@ -32,18 +43,26 @@ class HomeworkStergeriSiInserari {
         
         for (int i = 0; i < arr.size(); i++) {
             if (arr.get(i) == min) {
-                arr.add(i + 1, min);
+                // arr.add(i + 1, min);
+                inserare(arr, i + 1, min);
                 i++;
             }
         }
     }
     
     // 3. https://www.pbinfo.ro/probleme/1453/stergere1
+    public static void stergere(ArrayList<Integer> arr, int index) {
+        for (int i = index; i < arr.size() - 1; i++) {
+            arr.set(i, arr.get(i + 1));
+        }
+        arr.set(arr.size() - 1, -1);
+    } 
     public static void stergere1(ArrayList<Integer> arr) {
         int size = arr.size();
         for (int i = 0; i < size; i++) {
             if (arr.get(i) % 2 == 0) {
-                arr.remove(i);
+                // arr.remove(i);
+                stergere(arr, i);
                 size--;
                 i--;
             }
@@ -68,7 +87,8 @@ class HomeworkStergeriSiInserari {
         int size = arr.size();
         for (int i = 0; i < size; i++) {
             if (isPrime(arr.get(i))) {
-                arr.remove(i);
+                // arr.remove(i);
+                stergere(arr, i);
                 size--;
                 i--;
             }
@@ -80,7 +100,8 @@ class HomeworkStergeriSiInserari {
         int size = arr.size();
         for (int i = 0; i < size; i++) {
             if (arr.get(i) % Math.sqrt(arr.get(i)) == 0.0) {
-                arr.add(i, (int)Math.sqrt(arr.get(i)));
+                // arr.add(i, (int)Math.sqrt(arr.get(i)));
+                inserare(arr, i, (int)Math.sqrt(arr.get(i)));
                 i++;
                 size++;
             }
