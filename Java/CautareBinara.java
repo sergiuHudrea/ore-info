@@ -2,17 +2,16 @@ public class CautareBinara {
     public static int cautareBin(int[] arr, int val) {
         int left = 0;
         int right = arr.length - 1;
-        int mid = arr.length / 2;
+        int mid = 0;
 
         while (right >= left) {
+            mid = (left + right) / 2;
             if (arr[mid] == val) {
                 return mid;
             } else if (val > arr[mid]) {
-                left = mid;
-                mid = (left + right) / 2;
+                left = mid + 1;
             } else if (val < arr[mid]) {
-                right = mid;
-                mid = (left + right) / 2;
+                right = mid - 1;
             }
         }
 
