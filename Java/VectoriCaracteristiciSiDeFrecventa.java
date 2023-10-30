@@ -76,7 +76,7 @@ public class VectoriCaracteristiciSiDeFrecventa {
             vectorDiv[1] = 1;
         }
         
-        for (int i = 2; i <= n ; i++) {
+        for (int i = 2; i <= Math.sqrt((double)n) ; i++) {
             for (int j = 1; i * j <=n; j++) {
                 vectorDiv[j * i]++;
             }
@@ -85,6 +85,52 @@ public class VectoriCaracteristiciSiDeFrecventa {
         for (int k = 0; k < vectorDiv.length; k++) {
             System.out.println("nrDiv = " + vectorDiv[k] + " nr = " + (k));
         }
+    }
+
+    // 6.
+    public static void CiurCelMaiMicDivPrim(int n) {
+        int[] vectorCelMaiMicDivPrim = new int[n + 1];
+
+        for (int j = 0; j < vectorCelMaiMicDivPrim.length; j++) {
+            vectorCelMaiMicDivPrim[j] = j;
+        }
+
+        for (int i = 2; i <= Math.sqrt((double)n); i++) {
+            if (vectorCelMaiMicDivPrim[i] == i) {
+                for (int j = 2; i * j <= n; j++) {
+                    if (vectorCelMaiMicDivPrim[j * i] == j * i) {
+                    vectorCelMaiMicDivPrim[j * i] = i;
+                    }
+                }
+            } 
+        }
+
+         for (int j = 0; j < vectorCelMaiMicDivPrim.length; j++) {
+            System.out.println(vectorCelMaiMicDivPrim[j]);
+        }
+
+    }
+
+    // 7.
+    public static void CiurCelMaiMareDivPrim(int n) {
+        int[] vectorCelMaiMareDivPrim = new int[n + 1];
+
+        for (int j = 0; j < vectorCelMaiMareDivPrim.length; j++) {
+            vectorCelMaiMareDivPrim[j] = j;
+        }
+
+        for (int i = 2; i <= n / 2; i++) {
+            if (vectorCelMaiMareDivPrim[i] == i) {
+                for (int j = 2; i * j <= n; j++) {
+                vectorCelMaiMareDivPrim[j * i] = i;
+                }
+            } 
+        }
+
+         for (int j = 0; j < vectorCelMaiMareDivPrim.length; j++) {
+            System.out.println(vectorCelMaiMareDivPrim[j]);
+        }
+
     }
 
 
@@ -111,7 +157,15 @@ public class VectoriCaracteristiciSiDeFrecventa {
         // CiurulLuiEratostene(n);
 
         // 5.
+        // int n = 20;
+        // CiurulNumarDiv(n);
+
+        // 6.
+        // int n = 20;
+        // CiurCelMaiMicDivPrim(n);
+
+        // 7.
         int n = 20;
-        CiurulNumarDiv(n);
+        CiurCelMaiMareDivPrim(n);
     }
 }

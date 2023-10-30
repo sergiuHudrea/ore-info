@@ -109,3 +109,56 @@ A[0] = A[0] + 10 = 5 + 10
 A[1] = A[1] - A[0] + 20 + A[0] + 10 = A[1] + 30 = 2 + 30 = 32
 A[2] = A[2] - A[1] - 10 + A[1] + 20 + 10 = A[2] + 20 = 23
 A[3] = A[3] - A[2] + A[2] + 20 = A[3] + 20 = 32
+
+---
+
+124, 229, 1322, 4, 534
+
+vectorFrecv = {0, 2, 5, 2, 3, 1, 0, 0, 0, 1}
+vectorCara =  {1, 0, 0, 0, 0, 0, 1, 1, 1, 0}
+
+1.
+k = 0, indexMin = 0, valMin = 0
+
+indexMin = 1, valMin = 2
+indexMin = 5, valMin = 1
+out: 5
+vectorCara =  {1, 0, 0, 0, 0, 1, 1, 1, 1, 0}
+
+2.
+k = 1, indexMin = 0, valMin = 2
+indexMin = 1, valMin = 2
+
+valMin = 2
+indexMin = 9, valMin = 1
+out: 9
+vectorFrecv = {0, 2, 5, 2, 3, 1, 0, 0, 0, 1}
+vectorCara =  {1, 0, 0, 0, 0, 1, 1, 1, 1, 1}
+
+3.
+k = 2, indexMin = 0, valMin = 0
+
+indexMin = 1, valMin = 2
+indexMin = 1, valMin = 2
+out: 1
+vectorFrecv = {0, 2, 5, 2, 3, 1, 0, 0, 0, 1}
+vectorCara =  {1, 1, 0, 0, 0, 1, 1, 1, 1, 1}
+
+4.
+k = 3, indexMin = 0
+indexMin = 2
+valMin = 5
+indexMin = 3, valMin = 2
+out: 3
+vectorFrecv = {0, 2, 5, 2, 3, 1, 0, 0, 0, 1}
+vectorCara =  {1, 1, 0, 1, 0, 1, 1, 1, 1, 1}
+
+5.
+k = 4, indexMin = 0
+indexMin = 2
+valMin = 5
+indexMin = 4, valMin = 3
+out: 4
+vectorFrecv = {0, 2, 5, 2, 3, 1, 0, 0, 0, 1}
+vectorCara =  {1, 1, 0, 1, 1, 1, 1, 1, 1, 1}
+
