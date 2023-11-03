@@ -52,6 +52,8 @@ public class VectoriCaracteristiciSiDeFrecventa {
     public static void CiurulLuiEratostene(int n) {
         int[] vectorPrime = new int[n + 1];
 
+        vectorPrime[0] = 1;
+        vectorPrime[1] = 1;
 
         for (int i = 2; i <= Math.sqrt((double)n); i++) {
             if (vectorPrime[i] == 0) {
