@@ -70,7 +70,7 @@ public class VectoriCaracteristiciSiDeFrecventa {
         }
     }
 
-    public static void CiurulNumarDiv(int n) {
+    public static void CiurulNumarDivPrimi(int n) {
         int[] vectorDiv = new int[n + 1];
 
         if (vectorDiv.length >= 2) {
@@ -160,7 +160,7 @@ public class VectoriCaracteristiciSiDeFrecventa {
 
         // 5.
         // int n = 20;
-        // CiurulNumarDiv(n);
+        // CiurulNumarDivPrimi(n);
 
         // 6.
         // int n = 20;
