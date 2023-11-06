@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 public class VectoriCaracteristiciSiDeFrecventa {
     // 1.
@@ -70,15 +70,14 @@ public class VectoriCaracteristiciSiDeFrecventa {
         }
     }
 
-    public static void CiurulNumarDivPrimi(int n) {
+    public static void CiurulNumarDiv(int n) {
         int[] vectorDiv = new int[n + 1];
 
-        if (vectorDiv.length >= 2) {
-            vectorDiv[0] = 1;
-            vectorDiv[1] = 1;
+        for (int i = 1; i <= n; i++) {
+            vectorDiv[i]++;
         }
         
-        for (int i = 2; i <= Math.sqrt((double)n) ; i++) {
+        for (int i = 2; i <= n ; i++) {
             for (int j = 1; i * j <=n; j++) {
                 vectorDiv[j * i]++;
             }
@@ -160,7 +159,7 @@ public class VectoriCaracteristiciSiDeFrecventa {
 
         // 5.
         // int n = 20;
-        // CiurulNumarDivPrimi(n);
+        // CiurulNumarDiv(n);
 
         // 6.
         // int n = 20;
