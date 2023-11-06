@@ -1,0 +1,100 @@
+class HomeworkCiurulLuiEratostene {
+    
+    // 1. https://www.pbinfo.ro/probleme/303/eratostene
+    public static int eratostene(int[] arr) {
+        int max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        
+        
+        int[] vectorPrime = new int[max + 1];
+        int contor = 0;
+        
+        for (int i = 2; i <= Math.sqrt((double)max); i++) {
+            if (vectorPrime[i] == 0) {
+                for (int j = i; j * i <= max; j++) {
+                    vectorPrime[j * i] = 1;
+                }
+            }
+        }
+        
+        for (int k = 0; k < arr.length; k++) {
+            if (vectorPrime[arr[k]] == 0) {
+                contor++;
+            }
+        }
+        
+        return contor;
+    }
+    
+    // 2. https://www.pbinfo.ro/probleme/3313/eratostene2
+    public static void eratosteneDoi(int[] arr) {
+        
+        int max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        
+        int[] vectorDivPrimi = new int[max + 1];
+        
+        for (int j = 2; j < Math.sqrt((double)max); j++) {
+            if (vectorDivPrimi[j] == 0) {
+                for (int i = 1; i * j <= max; i++) {
+                    vectorDivPrimi[i * j]++;
+                }
+            }
+        }
+        
+        for (int k = 0; k < arr.length; k++) {
+            System.out.println(vectorDivPrimi[arr[k]]);
+        }
+    }
+    
+    // 3. https://www.pbinfo.ro/probleme/3301/nrdiv9
+    public static int nrDivNoua(int n) {
+        int[] vectorDiv = new int[n + 1];
+        int contor = 0;
+
+        for (int i = 1; i <= n; i++) {
+            vectorDiv[i]++;
+        }
+        
+        for (int i = 2; i <= n ; i++) {
+            for (int j = 1; i * j <=n; j++) {
+                vectorDiv[j * i]++;
+            }
+        }
+        
+        for (int i = 0; i < vectorDiv.length; i++) {
+            if (vectorDiv[i] == 9) {
+                contor++;
+            }
+        }
+        
+        return contor;
+    }
+
+ 
+   
+    
+    
+    public static void main(String[] args) {
+      // 1. 
+    //   int[] arr = {12, 18, 19, 25, 29, 7};
+    //   System.out.println(eratostene(arr));
+      
+      // 2.
+    //   int[] arr = {30, 5, 44, 210, 1, 35, 30030};
+    //   eratosteneDoi(arr);
+
+    // 3.
+    System.out.println(nrDivNoua(100));
+    System.out.println(nrDivNoua(1000));
+    
+    }
+}
