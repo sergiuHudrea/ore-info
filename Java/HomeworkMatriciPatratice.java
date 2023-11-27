@@ -150,19 +150,20 @@ class HomeworkMatriciPatratice {
     // 6. https://www.pbinfo.ro/probleme/787/matsim1
     public static void matSimUnu(int[][] matrice) {
         int[][] matSim = new int[matrice.length][matrice.length];
+        int len = matrice.length - 1;
 
         for (int i = 0; i < matrice.length; i++) {
             for (int j = 0; j < matrice[i].length; j++) {
                 if (i + j == matrice.length - 1) {
                     matSim[i][j] = matrice[i][j];
+                } else {
+                    matSim[i][j] = matrice[len - j][len - i];
                 }
             }
         }
 
         for (int i = 0; i < matSim.length; i++) {
-            for (int j = 0; j < matSim[i].length; j++) {
-                System.out.println(matSim[i][j]);
-            }
+            System.out.println(Arrays.toString(matSim[i]));
         }
     }
 
@@ -211,13 +212,22 @@ class HomeworkMatriciPatratice {
         // matSim(matrice);
 
         // 5. 
+        // int[][] matrice = {
+        //     {3, 1, 8, 5, 4}, 
+        //     {7, 8, 5, 1, 2}, 
+        //     {2, 2, 6, 7, 3},
+        //     {9, 8, 1, 3, 6},
+        //     {7, 5, 3, 1, 7}
+        // };
+        // System.out.println(Arrays.toString(zoneUnu(matrice)));
+
+        // 6.
         int[][] matrice = {
-            {3, 1, 8, 5, 4}, 
-            {7, 8, 5, 1, 2}, 
-            {2, 2, 6, 7, 3},
-            {9, 8, 1, 3, 6},
-            {7, 5, 3, 1, 7}
+            {3, 1, 8, 5}, 
+            {7, 8, 5, 1}, 
+            {2, 2, 6, 7},
+            {9, 8, 1, 3},
         };
-        System.out.println(Arrays.toString(zoneUnu(matrice)));
+        matSimUnu(matrice);
     }
 }
