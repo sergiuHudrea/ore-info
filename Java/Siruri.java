@@ -74,6 +74,8 @@ public class Siruri {
         }
     }
 
+    // (n - 1) + (n - 2) + (n - 3) + ... + 2 + 1         (n - 1)n / 2 = (n ** 2 / 2) - (n / 2) -> O(n)
+
     // 7. 
     public static void insertionSortAsc(int[] arr) {
         int aux = 0;
